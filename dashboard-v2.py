@@ -10,7 +10,7 @@ from simulation.creature import Creature
 from simulation.environment import Environment
 from simulation.evolution_engine import EvolutionEngine
 
-st.set_page_config(page_title="Evolution Simulator", layout="wide")
+st.set_page_config(page_title="Evolution Simulator", page_icon="🧬", layout="wide")
 st.title("🧬 Generative Evolution Simulator")
 st.caption("Biologically grounded — Holling Type II/III predation · Standardized selection gradients · 10 heritable traits")
 
