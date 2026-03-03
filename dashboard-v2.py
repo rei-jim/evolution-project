@@ -62,9 +62,9 @@ TRAIT_GROUPS = {
 
 def caption(text: str):
     st.markdown(
-        f"""<div style="background:#1a1a2e;border-left:3px solid #4a9eff;
+        f"""<div style="border-left:3px solid #4a9eff;
         border-radius:4px;padding:10px 16px;margin-top:-8px;margin-bottom:24px;
-        font-size:0.85rem;color:#a0aec0;line-height:1.6;">{text}</div>""",
+        font-size:0.85rem;line-height:1.6;opacity:0.85;">{text}</div>""",
         unsafe_allow_html=True,
     )
 
@@ -139,7 +139,7 @@ if run_btn:
                       title="Effective Population Size Over Time")
         fig.update_traces(line_color="#00ff88", line_width=3)
         fig.update_layout(
-            template="plotly_dark",
+            template="plotly_white",
             yaxis_title="Population Size",
             xaxis_title="Generation",
             yaxis=dict(range=[0, max(means["population_size"].max() * 1.1, pop_size * 1.1)])
@@ -180,7 +180,7 @@ if run_btn:
                       title="Mean Reproductive Fitness Over Time")
         fig.update_traces(line_color="#ff44aa", line_width=3)
         fig.update_layout(
-            template="plotly_dark",
+            template="plotly_white",
             yaxis_title="Fitness",
             xaxis_title="Generation"
         )
@@ -220,7 +220,7 @@ if run_btn:
                       y=["speed", "camouflage", "vigilance"],
                       title="Detection & Escape Traits",
                       color_discrete_map=TRAIT_COLORS)
-        fig.update_layout(template="plotly_dark")
+        fig.update_layout(template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
 
         dominant = max(["speed","camouflage","vigilance"],
@@ -246,7 +246,7 @@ if run_btn:
                       y=["armor", "maneuverability"],
                       title="Contact-Defense Traits",
                       color_discrete_map=TRAIT_COLORS)
-        fig.update_layout(template="plotly_dark")
+        fig.update_layout(template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
 
         caption(
@@ -278,7 +278,7 @@ if run_btn:
                       y=["metabolism", "fat_reserves", "risk_taking"],
                       title="Resource Acquisition Traits",
                       color_discrete_map=TRAIT_COLORS)
-        fig.update_layout(template="plotly_dark")
+        fig.update_layout(template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
 
         caption(
@@ -305,7 +305,7 @@ if run_btn:
                       y=["repro_invest", "size"],
                       title="Reproductive Investment & Body Size",
                       color_discrete_map=TRAIT_COLORS)
-        fig.update_layout(template="plotly_dark")
+        fig.update_layout(template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
 
         caption(
@@ -341,7 +341,7 @@ if run_btn:
             title="Speed vs Camouflage (size = armor)",
             color_continuous_scale="Viridis",
         )
-        fig.update_layout(template="plotly_dark")
+        fig.update_layout(template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
 
         spread = last_gen["speed"].std() + last_gen["camouflage"].std()
@@ -366,7 +366,7 @@ if run_btn:
             title="Metabolism vs Repro Investment (size = fat reserves)",
             color_continuous_scale="Plasma",
         )
-        fig.update_layout(template="plotly_dark")
+        fig.update_layout(template="plotly_white")
         st.plotly_chart(fig, use_container_width=True)
 
         caption(
@@ -390,7 +390,7 @@ if run_btn:
         title="Trait Variance Over Generations — All 10 Traits",
         color_discrete_map=TRAIT_COLORS,
     )
-    fig.update_layout(template="plotly_dark")
+    fig.update_layout(template="plotly_white")
     st.plotly_chart(fig, use_container_width=True)
 
     avg_var       = variances[all_traits].iloc[-1].mean()

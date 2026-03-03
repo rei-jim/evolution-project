@@ -1,9 +1,3 @@
-[theme]
-primaryColor = "#4a9eff"
-backgroundColor = "#0e1117"
-secondaryBackgroundColor = "#1a1a2e"
-textColor = "#fafafa"
-
 [server]
 headless = true
 port = 8501
